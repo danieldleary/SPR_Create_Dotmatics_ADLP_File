@@ -6,33 +6,8 @@ homedir = os.environ['HOME']
 add_default_comments = True
 master_tbl_as_path = True
 
-
-def menu():
-    """
-    Simple menu for running the script from the command line.
-    :return:
-    """
-
-    global config_file_path
-    config_file_path = input('Please copy and paste the full configuration file path.\n'
-                             'Alternatively you can drag the file to the terminal window.\n'
-                             'Type "Exit" to exit script.')
-
-
-    if config_file_path == 'Exit':
-        exit(0)
-
-    print('Next...\n\n')
-
-    adlp_save_file = input('Type the name of the ADLP file with a .xlsx extention.\n'
-                           '\nFor example: 180101_SPR_Results.xlsx\n'
-                           'Type "Exit" to exit script.')
-
-    if adlp_save_file == 'Exit':
-        exit(0)
-
-    global adlp_save_file_path
-    adlp_save_file_path = homedir + '/' + 'desktop' + '/' + adlp_save_file
+config_file_path = '/Users/bfulroth/Desktop/Sara_debug/Config.txt'
+adlp_save_file_path = '/Users/bfulroth/Desktop/Sara_debug/test1.xlsx'
 
 
 def dup_item_for_dot_df(df, col_name, times_dup=3, sort=False):
@@ -484,7 +459,6 @@ def spr_create_dot_upload_file(config_file, data_validation=add_default_comments
 
 
 if __name__ == '__main__':
-    menu()
     spr_create_dot_upload_file(config_file=config_file_path)
     print('Program Done!')
     print("The ADLP result was saved to your desktop.")

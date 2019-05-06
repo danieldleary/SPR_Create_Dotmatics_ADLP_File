@@ -6,8 +6,8 @@ homedir = os.environ['HOME']
 add_default_comments = True
 master_tbl_as_path = True
 
-config_file_path = '/Users/bfulroth/Desktop/Sara_debug/Config.txt'
-adlp_save_file_path = '/Users/bfulroth/Desktop/Sara_debug/test1.xlsx'
+config_file_path = '/Users/bfulroth/Documents/190506_sara_spr_processing_error/190502_7228_Config_btf.txt'
+adlp_save_file_path = '/Users/bfulroth/Desktop/test1.xlsx'
 
 
 def dup_item_for_dot_df(df, col_name, times_dup=3, sort=False):

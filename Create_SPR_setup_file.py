@@ -6,20 +6,7 @@ import os
 # Get the users Home Directory
 homedir = os.environ['HOME']
 
-# Retrieve file name from command line arguments
-command_args = sys.argv
-
-if len(sys.argv) != 2:
-    print('\nPossiable wrong number of command-line arguments for script.\n')
-    print('Please type the name of the script, followed by a space, followed by the full path of the csv file name \n'
-          'containing the compound table.')
-    print('')
-    print('Example: python Create_SPR_setup_file.py '
-          '/Users/bfulroth/PycharmProjects/SPR_Create_Dotmatics_ADLP_File/SPR_setup_test_file.csv\n')
-    exit(0)
-
-csv_file_name = command_args[1]
-
+csv_file_name = '/Users/bfulroth/Documents/20190807_SHOC2_16cmpd_run_1.csv'
 
 def spr_setup_sheet(df_setup_ori):
     """
@@ -84,7 +71,7 @@ def spr_setup_sheet(df_setup_ori):
 
                 for i in range(int(df_setup_trim.iloc[cmpd]['num_pts'])):
                     dose_list.append(top)
-                    top = top / int(df_setup_ori.iloc[cmpd]['fold_dil']) # use value in original DataFrame to determine
+                    top = top / float(df_setup_ori.iloc[cmpd]['fold_dil']) # use value in original DataFrame to determine
                     # the fold of dilution.
                 dose_list.sort(reverse=False)
 
